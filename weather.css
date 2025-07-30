@@ -8,10 +8,14 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to right, #74ebd5, #acb6e5);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-image 0.5s ease-in-out;
 }
 
 .weather-container {
@@ -26,7 +30,7 @@ body {
 }
 
 .weather-container:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
 .weather-container h2 {
@@ -52,7 +56,7 @@ input:focus {
 button {
   padding: 12px 20px;
   font-size: 16px;
-  background-color: #2196f3;
+  background-color: green;
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -63,6 +67,7 @@ button {
 
 button:hover {
   background-color: #0b7dda;
+  transform: translateY(-3px);
 }
 
 #weatherResult {
@@ -82,6 +87,28 @@ button:hover {
   margin: 5px 0;
 }
 
+/* Loader Spinner */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #2196f3;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 20px auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 500px) {
   .weather-container {
     padding: 25px 20px;
